@@ -60,7 +60,7 @@ namespace PostN.WebApi
 
             services.AddDbContext<CMKWDTP2Context>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("p2-210726-cdk"));
+                options.UseSqlServer(Configuration.GetConnectionString("postndb"));
                 options.LogTo(Console.WriteLine);
             });
             services.AddControllersWithViews()

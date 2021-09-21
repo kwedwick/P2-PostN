@@ -55,7 +55,7 @@ namespace Tests
             Assert.Equal(viewResult, result.Result);
         
         }
-        [Fact]
+        /*[Fact]
         public async Task GetAllProductsAsync_ShouldReturnAllProducts()
         {
             var logger = new Mock<ILogger<PostController>>();
@@ -70,7 +70,7 @@ namespace Tests
                 Assert.Equal(testPost.Result, result);
             }
             
-        }
+        }*/
 
         //[Fact]
         //public void ProveThatPostControllerIsCalled()
