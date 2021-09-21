@@ -1,0 +1,21 @@
+<mat-nav-list>
+    <a mat-list-item routerLink="/" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon><span class="nav-caption"></span>
+    </a>
+    <a *ngIf="isAdmin()" mat-list-item routerLink="/users" (click)="onSidenavClose()">
+        Users<span class="nav-caption"></span>
+    </a>
+    <a *ngIf="authService.loggedIn()" mat-list-item routerLink="/profile/{{authService.currentUser.id}}" (click)="onSidenavClose()">
+        {{authService.currentUser.username}}<span class="nav-caption"></span>
+    </a>
+    <a *ngIf="authService.loggedIn()" mat-list-item routerLink="/explore" (click)="onSidenavClose()">
+        Explore<span class="nav-caption"></span>
+    </a>
+    <a mat-list-item routerLink="/login" (click)="onSidenavClose()" *ngIf="!authService.loggedIn()">
+        Login<span class="nav-caption"></span>
+    </a>
+    <a mat-list-item routerLink="/register" (click)="onSidenavClose()" *ngIf="!authService.loggedIn()">
+        Register<span class="nav-caption"></span>
+    </a>
+    <a mat-list-item (click)="logout()" *ngIf="authService.loggedIn()">Log Out</a><span class="nav-caption"></span>
+</mat-nav-list>

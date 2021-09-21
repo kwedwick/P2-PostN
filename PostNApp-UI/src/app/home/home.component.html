@@ -1,0 +1,8 @@
+<app-add-post *ngIf="authService.loggedIn()"></app-add-post>
+<br>
+<div *ngIf="posts" class="container">
+    <div *ngFor="let post of posts" class="row justify-content-md-center">
+        <app-posts [post]="post" class="col"></app-posts>
+    </div>
+</div>
+

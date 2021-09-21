@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{post?.title}}</mat-card-title>
+    <mat-card-subtitle>{{post?.created}}</mat-card-subtitle>
+    <mat-card-subtitle>By: {{post?.username}}</mat-card-subtitle>
+    <button mat-button *ngIf="post?.username != authService.currentUser.username" routerLink="/profile/{{post?.userId}}">View Profile</button>
+  </mat-card-header>
+  <img *ngIf="post?.image" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+    alt="Photo of a Shiba Inu">
+
+  <mat-card-content>
+    <p>
+      {{post?.body}}
+    </p>
+  </mat-card-content>
+  <hr>
+  
+  <ng-template #noComments>No comments! Be the first!</ng-template>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button *ngIf="post?.username == authService.currentUser.username" routerLink="/edit/post/{{post?.id}}">Edit Post</button>
+    <button mat-button *ngIf="post?.username == authService.currentUser.username" (click)="deletePost()" (click)="reloadCurrentPage()">Delete Post</button>
+  </mat-card-actions>
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ADD COMMENT
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-add-comment [postId]="post?.id"></app-add-comment>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Comments {{commentCount}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-card-content *ngIf="post?.comments; else noComments">
+        <div *ngFor="let comment of post?.comments">
+          <app-comments [comment]="comment"></app-comments>
+        </div>
+      </mat-card-content>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
+<br>

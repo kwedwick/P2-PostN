@@ -1,0 +1,4 @@
+<div class="container" *ngIf="currentuserId != otherUserId">
+    <button *ngIf="isFriend==false"(click)="addFriend()">Add Friend</button>
+    <button *ngIf="isFriend==true" (click)="deleteFriend()">Delete Friend</button>
+</div>

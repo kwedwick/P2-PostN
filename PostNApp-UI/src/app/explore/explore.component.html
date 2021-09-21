@@ -1,0 +1,7 @@
+<button (click) = "goTo()">Search</button>
+
+<div class= "container" *ngIf="posts">
+    <div *ngFor="let post of posts">
+        <app-posts [post]="post"></app-posts>
+    </div>
+</div>

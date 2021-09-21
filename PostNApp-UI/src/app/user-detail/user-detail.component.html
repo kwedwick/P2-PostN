@@ -1,0 +1,47 @@
+<div class="container">
+  <button mat-raised-button class="mt-5" color="accent" (click)="goBack()">Go Back</button>
+</div>
+<div *ngIf="user" class="container">
+  <mat-card>
+    <mat-toolbar fxLayoutAlign="stretch" color="primary">User Details:</mat-toolbar>
+    
+    <div>Username: {{user.username}}</div>
+    <div>Email: {{user.email}}</div>
+    <mat-card>
+      <mat-card-content>
+        <mat-toolbar fxLayoutAlign="stretch" color="primary">Update User Information:</mat-toolbar>
+        <mat-form-field class="input-full-width">
+          <label>Firstname:</label><br>
+          <input [(ngModel)]="user.firstName" placeholder="firstName" />
+        </mat-form-field>
+        <mat-form-field class="input-full-width">
+          <label>Lastname:</label><br>
+          <input [(ngModel)]="user.lastName" placeholder="lastName" />
+        </mat-form-field>
+
+        <mat-form-field class="input-full-width">
+          <label>Email:</label><br>
+          <input [(ngModel)]="user.email" placeholder="email" />
+        </mat-form-field>
+        <mat-form-field class="input-full-width">
+            <label>Username:</label><br>
+            <input [(ngModel)]="user.username" placeholder="username" />
+          </mat-form-field>
+          <mat-form-field class="input-full-width">
+            <label>Role:</label><br>
+            <input [(ngModel)]="user.role" placeholder="role" />
+          </mat-form-field>
+        <mat-form-field class="input-full-width">
+          <label>Phone number:</label><br>
+          <input [(ngModel)]="user.phoneNumber" placeholder="phoneNumber" />
+        </mat-form-field>
+        <mat-form-field class="input-full-width">
+          <label>About Me:</label><br>
+          <input [(ngModel)]="user.aboutMe" placeholder="aboutMe" />
+        </mat-form-field>
+        <button mat-raised-button class="mt-5" color="accent" (click)="save()">Save</button>
+        <button mat-raised-button class="mt-5" color="warn" (click)="delete()">Delete</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-card>
+</div>
