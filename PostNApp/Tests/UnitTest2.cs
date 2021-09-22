@@ -16,17 +16,17 @@ namespace Tests
     public class UnitTest2
     {
    
-        private readonly DbContextOptions<CMKWDTP2Context> options;
+        private readonly DbContextOptions<postNContext> options;
 
         public UnitTest2()
         {
-            options = new DbContextOptionsBuilder<CMKWDTP2Context>().UseSqlite("Filename=Test.db").Options;
+            options = new DbContextOptionsBuilder<postNContext>().UseSqlite("Filename=Test.db").Options;
             Seed();
         }
         [Fact]
         public void UsernameShouldBeUnique()
         {
-            using (var testcontext1 = new CMKWDTP2Context(options))
+            using (var testcontext1 = new postNContext(options))
             {
                 IUserRepo _repo = new UserRepo(testcontext1);
         
@@ -38,7 +38,7 @@ namespace Tests
         [Fact]
         public void EmailShouldBeUnique()
         {
-            using (var testcontext2 = new CMKWDTP2Context(options))
+            using (var testcontext2 = new postNContext(options))
             {
                 IUserRepo _repo = new UserRepo(testcontext2);
         
@@ -50,7 +50,7 @@ namespace Tests
 
         private void Seed()
         {
-            using (var context = new Entity.CMKWDTP2Context(options))
+            using (var context = new Entity.postNContext(options))
             {
                 context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();

@@ -17,11 +17,11 @@ namespace Tests
 {
     public class ControllerTest
     {
-        private readonly DbContextOptions<CMKWDTP2Context> options;
+        private readonly DbContextOptions<postNContext> options;
 
         public ControllerTest()
         {
-            options = new DbContextOptionsBuilder<CMKWDTP2Context>().UseSqlite("Filename=Test.db").Options;
+            options = new DbContextOptionsBuilder<postNContext>().UseSqlite("Filename=Test.db").Options;
         
         }
         //[Fact]
