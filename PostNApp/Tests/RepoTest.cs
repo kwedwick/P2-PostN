@@ -16,18 +16,18 @@ namespace Tests
     public class RepoTest
     {
 
-        private readonly DbContextOptions<CMKWDTP2Context> options;
+        private readonly DbContextOptions<postNContext> options;
 
         public RepoTest()
         {
-            options = new DbContextOptionsBuilder<CMKWDTP2Context>().UseSqlite("Filename=Test.db").Options;
+            options = new DbContextOptionsBuilder<postNContext>().UseSqlite("Filename=Test.db").Options;
             Seed();
         }
        
         [Fact]
         public void GetAllUsersShouldGetAllUsers()
         {
-            using (var testcontext = new CMKWDTP2Context(options))
+            using (var testcontext = new postNContext(options))
             {
                 IUserRepo _repo = new UserRepo(testcontext);
                 var users = _repo.GetUsers();
@@ -39,7 +39,7 @@ namespace Tests
         [Fact]
         public void AddAUserShouldAddAUser()
         {
-            using (var testcontext = new CMKWDTP2Context(options))
+            using (var testcontext = new postNContext(options))
             {
                 IUserRepo _repo = new UserRepo(testcontext);
         
@@ -61,7 +61,7 @@ namespace Tests
                     }
                 );
             }
-            using (var assertContext = new CMKWDTP2Context(options))
+            using (var assertContext = new postNContext(options))
             {
                 PostN.DataAccess.Entities.User user = assertContext.Users.FirstOrDefault(user => user.Id == 1);
         
@@ -77,7 +77,7 @@ namespace Tests
 
         private void Seed()
         {
-            using (var context = new Entity.CMKWDTP2Context(options))
+            using (var context = new Entity.postNContext(options))
             {
                 context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();

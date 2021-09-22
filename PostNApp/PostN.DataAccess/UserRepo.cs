@@ -11,8 +11,8 @@ namespace PostN.DataAccess
 {
     public class UserRepo : IUserRepo
     {
-        private readonly CMKWDTP2Context _context;
-        public UserRepo(CMKWDTP2Context context)
+        private readonly postNContext _context;
+        public UserRepo(postNContext context)
         {
             _context = context;
         }

@@ -11,8 +11,8 @@ namespace PostN.DataAccess
 {
     public class PostRepo : IPostRepo
     {
-        private readonly CMKWDTP2Context _context;
-        public PostRepo(CMKWDTP2Context context)
+        private readonly postNContext _context;
+        public PostRepo(postNContext context)
         {
             _context = context;
         }
