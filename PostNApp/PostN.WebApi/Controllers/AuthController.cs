@@ -49,8 +49,8 @@ namespace PostN.WebApi.Controllers
                 };
 
                 var tokenOptions = new JwtSecurityToken(
-                    issuer: "https://localhost:44365",
-                    audience: "https://localhost:4200",
+                    issuer: "https://postn-connect.azurewebsites.net",//"https://localhost:44365",
+                    audience: "https://postn-ui.azurewebsites.net",//"https://localhost:4200",
                     claims: claims,
                     expires: DateTime.Now.AddDays(7),
                     signingCredentials: signingCredentials
