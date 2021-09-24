@@ -1,153 +1,25 @@
-<h2>User Profile</h2>
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
- 
-    <title>contact details page - Bootdey.com</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
-	
-</head>
-<body>
-    -->
-    <div *ngIf="user">
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <div>
-                        <app-user-card [user]="user" class="col"></app-user-card>
-                        <app-manage-friend [otherUserId]="user.id"></app-manage-friend>
-                    </div>
-                    <br>
-                    <div>
-                        <h3>Friends</h3>
-                        <app-friend-list *ngIf="user.friends" [friends]="user.friends"></app-friend-list>
-                    </div>
-                    <div class="row"></div>
-                </div>
-                <div class="col-8">
-                    <app-add-post *ngIf="user.id==authService.currentUser.id"></app-add-post><br *ngIf="user.id==authService.currentUser.id">
-                    <div *ngFor="let post of user.posts" class="row justify-content-md-center">
-                        <app-posts [post]="post" class="col"></app-posts>
-                    </div>
-                </div>
-            </div>
+<div *ngIf="user">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div>
+          <app-user-card [user]="user" class="col"></app-user-card>
+          <app-manage-friend [otherUserId]="user.id"></app-manage-friend>
         </div>
-    </div>
-    
-<!--
-    <div class="col-md-4">
-        
-        
-            <app-user-card [user]="user"></app-user-card>
-            <br>
-
-        <div class="panel panel-default hidden-xs hidden-sm">
-            <div class="panel-heading">
-                <div class="panel-title text-center">Basic Information</div>
-            </div>
-            <div class="panel-body">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <a href="#"><img class="media-object img-circle img-thumbnail thumb48" src="https://cdn-icons-png.flaticon.com/128/2947/2947698.png" alt="Contact"></a>
-                    </div>
-                    <div class="media-body pt-sm">
-                        <div class="text-bold">Country
-                            <div class="text-sm text-muted">{{user.state}}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <a href="#"><img class="media-object img-circle img-thumbnail thumb48" src="https://cdn4.iconfinder.com/data/icons/gradient-circle-blue/36/2025-512.png" alt="Contact"></a>
-                    </div>
-                    <div class="media-body pt-sm">
-                        <div class="text-bold">State
-                            <div class="text-sm text-muted">{{user.state}}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <a href="#"><img class="media-object img-circle img-thumbnail thumb48" src="https://images.all-free-download.com/images/graphiclarge/email_icon_6843322.jpg" alt="Contact"></a>
-                    </div>
-                    <div class="media-body pt-sm">
-                        <div class="text-bold">Email
-                            <div class="text-sm text-muted">{{user.email}}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <a href="#"><img class="media-object img-circle img-thumbnail thumb48" src="https://www.pngitem.com/pimgs/m/20-202269_phone-number-telephone-svg-png-icon-free-download.png" alt="Contact"></a>
-                    </div>
-                    <div class="media-body pt-sm">
-                        <div class="text-bold">Phone number
-                            <div class="text-sm text-muted">{{user.phoneNumber}}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <a href="#"><img class="media-object img-circle img-thumbnail thumb48" src="https://image.flaticon.com/icons/png/512/307/307629.png" alt="Contact"></a>
-                    </div>
-                    <div class="media-body pt-sm">
-                        <div class="text-bold">Date of Birth
-                            <div class="text-sm text-muted">{{user.dob}}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <br>
+        <div>
+          <h3>Friends</h3>
+          <app-friend-list *ngIf="user.friends" [friends]="user.friends" ></app-friend-list>
+        </div><br>
+        <div class="row"></div>
+      </div>
+      <div class="col-md-8">
+        <app-add-post *ngIf="user.id==authService.currentUser.id"></app-add-post><br
+          *ngIf="user.id==authService.currentUser.id">
+        <div *ngFor="let post of user.posts" class="row justify-content-md-center">
+          <app-posts [post]="post" class="col"></app-posts>
         </div>
+      </div>
     </div>
-    <div class="col-md-8">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="pull-right">
-                   
-                </div>
-
-                <div class="h4 text-center">My Posts</div>
-
-                <div *ngFor="let post of user.posts" class="row justify-content-md-center">
-                    <app-posts [post]="post" class="col"></app-posts>
-                </div>
-                
-                
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
-</div>
-
-<style type="text/css">
-
-.panel.panel-default {
-    border-top-width: 3px;
-}
-.panel {
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.14),0 2px 2px 0 rgba(0,0,0,.098),0 1px 5px 0 rgba(0,0,0,.084);
-    border: 0;
-    border-radius: 4px;
-    margin-bottom: 16px;
-}
-.thumb96 {
-    width: 96px!important;
-    height: 96px!important;
-}
-.thumb48 {
-    width: 48px!important;
-    height: 48px!important;
-}
-</style>
-
-<script type="text/javascript">
-
-</script>
-</body>
-</html>
--->

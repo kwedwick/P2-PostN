@@ -1,32 +1,18 @@
-
-<!--
-<div style="text-align: center;" class="profile-image"><img class="img-circle img-thumbnail thumb96" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Contact"></div>
--->
-<mat-card *ngIf="user" class="example-card">
-    <div class="col 2">
-        <mat-card-header>
-<table>
-    <tr>
-        <th style="text-align: center;"><div style="text-align: center;" class="row"><img class="img-circle img-thumbnail thumb96" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Contact"></div></th>
-    </tr>
-    <tr>
-        <td>
-            <br>
-      <div class="row">
-      
+<mat-card *ngIf="user" class="container">
+  <div class="row">
+    <div class="col-align-center">
+      <img class="thumb96"
+      src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Contact">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md">
       <mat-card-title>{{user.firstName}} {{user.lastName}}</mat-card-title>
-      <td>
-        <mat-card-subtitle>{{user.aboutMe}}</mat-card-subtitle>
-        <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
-        <mat-card-subtitle>{{user.phoneNumber}}</mat-card-subtitle>
-        <mat-card-subtitle>{{user.country}}</mat-card-subtitle>
-        <mat-card-subtitle>{{user.state}}</mat-card-subtitle>
-    </td>
+      <mat-card-subtitle>{{user.aboutMe}}</mat-card-subtitle>
+      <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+      <mat-card-subtitle>{{user.phoneNumber}}</mat-card-subtitle>
+      <mat-card-subtitle>{{user.state}}, {{user.country}}</mat-card-subtitle>
     </div>
-</td>
-</tr>
-    
-</table>
-</mat-card-header>
-    </div>
-</mat-card>  
+  </div>
+</mat-card>

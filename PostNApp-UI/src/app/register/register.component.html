@@ -1,126 +1,39 @@
-<!-- 
-<div class="card">
-    <h4 class="card-header">Register</h4>
-    <div class="card-body">
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                    <div *ngIf="f.username.errors.required">Username is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                    <div *ngIf="f.email.errors.required">Email is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                    <div *ngIf="f.password.errors.required">Password is required</div>
-                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="email">About Me</label>
-                <input type="text" formControlName="aboutMe" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.aboutMe.errors }" />
-                <div *ngIf="submitted && f.aboutMe.errors" class="invalid-feedback">
-                    <div *ngIf="f.aboutMe.errors.required">aboutMe is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="state">State</label>
-                <input type="text" formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
-                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
-                    <div *ngIf="f.state.errors.required">State is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="country">Country</label>
-                <input type="text" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" />
-                <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
-                    <div *ngIf="f.country.errors.required">Country is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="dob">Dob</label>
-                <input type="text" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
-                <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
-                    <div *ngIf="f.dob.errors.required">DOB is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="phoneNumber">phoneNumber</label>
-                <input type="text" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
-                <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
-                    <div *ngIf="f.phoneNumber.errors.required">Phonenumber is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <button [disabled]="loading" class="btn btn-primary" >
-                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                    Register
-                </button>
-                <a routerLink="../login" class="btn btn-link">Cancel</a>
-            </div>
-        </form>
-    </div>
-</div> -->
-
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
   <mat-card fxFlex="75">
     <mat-toolbar color="primary" fxLayoutAlign="center center">Sign-up Page</mat-toolbar>
     <form class="signup-form" [formGroup]="form" (ngSubmit)="onSubmit()" class="signup-form-padding">
-      
-      <mat-form-field class="input-full-width" appearance="fill">
+
+      <mat-form-field class="input-full-width">
         <mat-label for='firstName'>First name</mat-label>
-        <input matInput type="text" placeholder="Ex. Bob" formControlName="firstName" class="form-control"
+        <input matInput type="text" placeholder="Ex. Bob" formControlName="firstName" class="form-control-lg"
           [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
         <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
           <div *ngIf="f.firstName.errors.required">First Name is required</div>
         </div>
       </mat-form-field>
-      <mat-form-field class="input-full-width" appearance="fill">
+      <mat-form-field class="input-full-width">
         <mat-label for='lastName'>Last Name</mat-label>
-        <input matInput type="text" placeholder="Ex. Smith" formControlName="lastName" class="form-control"
+        <input matInput type="text" placeholder="Ex. Smith" formControlName="lastName" class="form-control-lg"
           [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
         <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
           <div *ngIf="f.lastName.errors.required">Last Name is required</div>
         </div>
       </mat-form-field>
 
-      <mat-form-field class="input-full-width" appearance="fill">
+      <mat-form-field class="input-full-width">
         <mat-label for='username'>Username</mat-label>
-        <input matInput placeholder="Ex. Username21" type="text" formControlName="username" class="form-control"
+        <input matInput placeholder="Ex. Username21" type="text" formControlName="username" class="form-control-lg"
           [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
         <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
           <div *ngIf="f.username.errors.required">Username is required</div>
           <div *ngIf="f.username.errors.minlength">More than 5 characters</div>
-          
+
         </div>
       </mat-form-field>
 
-      <mat-form-field class="input-full-width" appearance="fill">
+      <mat-form-field class="input-full-width">
         <mat-label for='email'>Email</mat-label>
-        <input matInput placeholder="Ex. pat@email.com" type="text" formControlName="email" class="form-control"
+        <input matInput placeholder="Ex. pat@email.com" type="text" formControlName="email" class="form-control-lg"
           [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
           <div *ngIf="f.email.errors.required">Email is required</div>
@@ -128,9 +41,9 @@
         </div>
       </mat-form-field>
 
-      <mat-form-field class="input-full-width" appearance="fill">
+      <mat-form-field class="input-full-width">
         <mat-label for='password'>Password</mat-label>
-        <input matInput type="password" formControlName="password" class="form-control"
+        <input matInput type="password" formControlName="password" class="form-control-lg"
           [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
           <div *ngIf="f.password.errors.required">Password is required</div>
@@ -138,43 +51,43 @@
         </div>
       </mat-form-field>
 
-      <mat-form-field class="input-full-width" appearance="fill">
+      <mat-form-field class="input-full-width">
         <mat-label for='phoneNumber'>Phone Number</mat-label>
-        <input type="tel" matInput placeholder="+00 555-555-1234" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+        <input type="tel" matInput placeholder="+00 555-555-1234" formControlName="phoneNumber" class="form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
         <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
             <div *ngIf="f.phoneNumber.errors.required">Phone number is required</div>
         </div>
       </mat-form-field>
 
-      <mat-form-field class="input-full-width" appearance="fill">
+      <mat-form-field class="input-full-width">
         <mat-label for='state'>State</mat-label>
-        <input matInput placeholder="Ex. California" type="text" formControlName="state" class="form-control"
+        <input matInput placeholder="Ex. California" type="text" formControlName="state" class="form-control-lg"
           [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
         <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
           <div *ngIf="f.state.errors.required">State is required</div>
         </div>
       </mat-form-field>
 
-      <mat-form-field class="input-full-width" appearance="fill">
+      <mat-form-field class="input-full-width">
         <mat-label for='country'>Country</mat-label>
-        <input matInput placeholder="Ex. United States" type="text" formControlName="country" class="form-control"
+        <input matInput placeholder="Ex. United States" type="text" formControlName="country" class="form-control-lg"
           [ngClass]="{ 'is-invalid': submitted && f.country.errors }" />
         <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
           <div *ngIf="f.country.errors.required">Country is required</div>
         </div>
       </mat-form-field>
 
-      <mat-form-field class="input-full-width" appearance="fill">
+      <mat-form-field class="input-full-width">
         <mat-label for='dob'>Date of Birth</mat-label>
-        <input matInput placeholder="1990-01-01" type="date" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+        <input matInput placeholder="1990-01-01" type="date" formControlName="dob" class="form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
         <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
             <div *ngIf="f.dob.errors.required">DOB is required</div>
         </div>
       </mat-form-field>
 
-      <mat-form-field class="input-full-width" appearance="fill">
+      <mat-form-field class="input-full-width">
         <mat-label for='aboutMe'>About Me</mat-label>
-        <input matInput maxlength="256" placeholder="Ex. I enjoy...." type="text" formControlName="aboutMe" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.aboutMe.errors }" />
+        <input matInput maxlength="256" placeholder="Ex. I enjoy...." type="text" formControlName="aboutMe" class="form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.aboutMe.errors }" />
         <div *ngIf="submitted && f.aboutMe.errors" class="invalid-feedback">
             <div *ngIf="f.aboutMe.errors.required">About me is required</div>
         </div>

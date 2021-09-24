@@ -1,4 +1,5 @@
 <div class="container" *ngIf="currentuserId != otherUserId">
-    <button *ngIf="isFriend==false"(click)="addFriend()">Add Friend</button>
-    <button *ngIf="isFriend==true" (click)="deleteFriend()">Delete Friend</button>
+  <br>
+    <button mat-raised-button color="primary" *ngIf="isFriend==false"(click)="addFriend()">Add Friend</button>
+    <button mat-raised-button color="warn" *ngIf="isFriend==true" (click)="deleteFriend()">Delete Friend</button>
 </div>

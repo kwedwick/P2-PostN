@@ -10,6 +10,8 @@ import { Location } from '@angular/common';
 })
 export class SearchComponent implements OnInit {
   users: User[] = [];
+  //username: string = "";
+  searchInput: string ='';
   constructor(private location: Location,private userService: UserService) { }
 
   ngOnInit(): void {

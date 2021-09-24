@@ -1,17 +1,15 @@
-.signup-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
 }
-
-td {
-  padding-right: 8px;
+.h-custom {
+  height: calc(100% - 73px);
 }
-
-.main-div mat-card {
-  padding: 0px;
-}
-
-.signup-form-padding {
-  padding: 20px;
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
 }

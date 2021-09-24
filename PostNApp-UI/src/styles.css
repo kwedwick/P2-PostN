@@ -5,7 +5,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .input-full-width {
     width: 100%;
   }
+a {
+  text-decoration: none;
+  color: lightskyblue;
+}
 
 a:hover {
     text-decoration: none;
+    color: rgb(211, 63, 88);
 }

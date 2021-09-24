@@ -1,19 +1,17 @@
-<div class="container">
-    <mat-card>
-        <mat-toolbar color="primary">Add Post</mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="formGroup" (ngSubmit)="newPost()">
-            <input matInput formControlName="userId" type="number" class="form-control" value={{userId}} hidden>
-            <mat-form-field class="input-full-width" appearance="fill">
-                <mat-label>Title</mat-label>
-                <input matInput placeholder="Ex. Title" formControlName="title" class="form-control">
-            </mat-form-field>
+<mat-card class="container">
+  <mat-toolbar color="primary">Add Post</mat-toolbar>
+  <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="formGroup" (ngSubmit)="newPost()">
+    <input matInput formControlName="userId" type="number" class="form-control" value={{userId}} hidden>
+    <mat-form-field class="input-full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Ex. Title" formControlName="title" class="form-control">
+    </mat-form-field>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Body</mat-label>
-                <input matInput type="text" placeholder="Today..." formControlName="body">
-            </mat-form-field>
-            <input matInput type="text" formControlName="username" class="form-control" value={{username}} hidden>
-            <button mat-raised-button type="submit" class="mt-5" color="primary" (click)="reloadCurrentPage()">Post</button>
-        </form>
-    </mat-card>
-</div>
+    <mat-form-field appearance="fill">
+      <mat-label>Body</mat-label>
+      <input matInput type="text" placeholder="Today..." formControlName="body">
+    </mat-form-field>
+    <input matInput type="text" formControlName="username" class="form-control" value={{username}} hidden>
+    <button mat-raised-button type="submit" class="mt-5" color="primary" (click)="reloadCurrentPage()">Post</button>
+  </form>
+</mat-card>

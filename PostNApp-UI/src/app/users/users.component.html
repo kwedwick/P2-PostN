@@ -1,9 +1,10 @@
 <mat-card class="container">
   <h2>ALL USERS</h2>
-  <mat-list *ngFor="let user of users" class="row">
-    <mat-card-content>
-      <app-user-card [user]="user" class="col-md-6"></app-user-card>
-      <button mat-raised-button color="primary" class="col-md-3" routerLink="/profile/update/{{user.id}}">Manage {{user.firstName}} {{user.lastName}}</button>
-    </mat-card-content>
-  </mat-list>
+  <div *ngFor="let user of users">
+    <div>
+      <app-user-card [user]="user" ></app-user-card>
+      <button mat-raised-button color="primary" routerLink="/profile/update/{{user.id}}">Manage
+        {{user.firstName}} {{user.lastName}}</button>
+    </div>
+  </div>
 </mat-card>

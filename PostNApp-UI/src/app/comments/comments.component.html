@@ -1,5 +1,7 @@
 <mat-card>
     <mat-card-content>{{comment?.commentBody}}</mat-card-content>
-    <mat-card-subtitle>{{comment?.username}} | {{comment?.created}}</mat-card-subtitle>
+    <mat-card-subtitle><a routerLink="/profile/{{comment?.userId}}">{{comment?.username}}</a> | {{comment?.created}}</mat-card-subtitle>
     <button mat-button color="warn" *ngIf="comment?.username == authService.currentUser.username" (click)="deleteComment()" (click)="reloadCurrentPage()">Delete</button>
 </mat-card>
+
+
